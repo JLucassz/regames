@@ -20,7 +20,6 @@ backend/uploads/
 backend/public/images/
 *.jpg
 *.jpeg
-*.png
 *.gif
 
 # Arquivos de Log e Sistema Operacional
