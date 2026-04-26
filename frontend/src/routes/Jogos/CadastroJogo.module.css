@@ -1,0 +1,327 @@
+/* === CONTAINER PRINCIPAL === */
+.wrapper {
+  position: relative;
+  width: 1200px;
+  margin-top: 40px;
+  background-color: #1f2937;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+
+/* === LAYOUT DE COLUNAS === */
+.form_columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+}
+
+.column {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 25px;
+}
+
+/* === FORM BOX === */
+.form_box {
+  width: 100%;
+  padding: 40px;
+}
+
+.form_box h1 {
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: #e5e7eb;
+  text-align: center;
+}
+
+/* === INPUT PADRÃO === */
+.input_inbox,
+.input_inbox_file,
+.rating_container {
+  width: 100%;
+  height: 55px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 2px solid #919c9a;
+  padding-bottom: 5px;
+}
+
+.input_inbox {
+  justify-content: space-between;
+}
+
+.input_inbox input {
+  width: 100%;
+  height: 100%;
+  padding: 0 35px 0 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.input_inbox label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  font-weight: 500;
+  color: #e5e7eb;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input_inbox input:focus + label,
+.input_inbox input:not(:placeholder-shown) + label {
+  top: -5px;
+}
+
+/* === INPUT DE ARQUIVO === */
+.input_inbox_file {
+  justify-content: center;
+}
+
+.input_inbox_file input[type="file"] {
+  display: none;
+}
+
+.input_inbox_file label {
+  width: 100%;
+  padding: 15px 40px;
+  font-size: 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  background-color: #1e3a8a;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  user-select: none;
+}
+
+.input_inbox_file label i {
+  margin-right: 10px;
+}
+
+/* === LISTA DE ARQUIVOS === */
+.fileListContainer {
+  width: 100%;
+  min-height: 55px;
+  padding: 15px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  background-color: #1e3a8a;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fileListContainer ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.fileListContainer li {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.fileListContainer .clearButton {
+  margin-left: 15px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.fileListContainer .clearButton:hover {
+  background-color: #c0392b;
+}
+
+/* === BOTÃO === */
+.btn {
+  margin: 50px auto 0 auto;
+  padding: 0.7em 2em;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  border-radius: 2px;
+  border: 2px solid #162d6f;
+  background-color: #1e3a8a;
+  color: #f9fafb;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16);
+  transition: 0.3s ease all;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === ANIMAÇÕES DE HOVER (BOTÕES) === */
+.input_inbox_file label,
+.clearButton,
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.input_inbox_file label::before,
+.clearButton::before,
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+.input_inbox_file label:hover::before,
+.clearButton:hover::before,
+.btn:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.input_inbox_file label:active,
+.clearButton:active,
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* === AVALIAÇÃO DE ESTRELAS === */
+.rating_container {
+  justify-content: center;
+}
+
+.rating_label {
+  position: absolute;
+  left: 15px;
+  font-size: 1em;
+  font-weight: 500;
+  color: #e5e7eb;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.rating_container .rating {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 10px 0;
+  position: relative;
+}
+
+.rating input {
+  position: relative;
+  width: 20px;
+  height: 40px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating input::before {
+  content: "\f005";
+  font-family: fontAwesome;
+  font-size: 30px;
+  color: #030b0f;
+  position: absolute;
+  left: 4px;
+  transition: 0.5s;
+}
+
+.rating input:nth-child(2n + 1)::before {
+  left: initial;
+  right: 4px;
+}
+
+.rating input:hover ~ input::before,
+.rating input:hover::before,
+.rating input:checked ~ input::before,
+.rating input:checked::before {
+  color: #1f9cff;
+}
+
+/* === TEXTAREA === */
+.textarea {
+  width: 100%;
+  min-height: 55px;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  display: flex;
+  position: relative;
+  border-bottom: 2px solid #919c9a;
+}
+
+.textarea textarea {
+  width: 100%;
+  padding: 10px 35px 10px 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  font-weight: 600;
+  color: #e5e7eb;
+  resize: none;
+  line-height: 1.5;
+  transition: height 0.2s ease-in-out;
+}
+
+.textarea label {
+  position: absolute;
+  top: 18px;
+  left: 15px;
+  font-size: 1em;
+  font-weight: 500;
+  color: #e5e7eb;
+  pointer-events: none;
+  transition: top 0.5s;
+}
+
+.textarea textarea:focus + label,
+.textarea textarea:not(:placeholder-shown) + label {
+  top: -10px;
+}
